@@ -1,3 +1,5 @@
+import client from "./client";
+
 require("dotenv").config();
 import {ApolloServer,gql} from "apollo-server";
 import schema, {typeDefs,resolvers} from "./schema";
@@ -5,6 +7,11 @@ import schema, {typeDefs,resolvers} from "./schema";
 
 const server = new ApolloServer({
     schema,
+    context: async({req})=>{
+        return{
+            client
+        }
+    }
 });
 
 const PORT = process.env.POPT;

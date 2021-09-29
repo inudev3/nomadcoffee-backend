@@ -8,5 +8,9 @@ export default gql`
         username: String!
         email: String!
         password: String!
+        name :String
+        location: String
+        avatarURL: String
+        githubUsername: String
     }
 `;
