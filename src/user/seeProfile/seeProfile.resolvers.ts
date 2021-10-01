@@ -1,8 +1,18 @@
-import {Resolvers} from "../../types";
-import client from "../../client";
-const resolvers:Resolvers={
-    Query:{
-        seeProfile:(_,{id})=> client.user.findUnique({where:{id}}),
+import { Resolvers } from "../../types";
+import { protectedResolver } from "../users.utils";
 
-    }
-}
+const resolvers: Resolvers = {
+  Query: {
+    seeProfile: async (_, { username }, { client, loggedInUser }) => {
+      try {
+        const user = await client.user.findUnique({ where: { username } });
+        if (!user) {
+          throw new Error("There is no such user.");
+        }
+        return user;
+      } catch (error) {
+        return error;
+      }
+    },
+  },
+};
