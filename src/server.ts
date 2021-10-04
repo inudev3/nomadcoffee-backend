@@ -3,7 +3,7 @@ import client from "./client";
 require("dotenv").config();
 import { ApolloServer, gql } from "apollo-server";
 import schema, { typeDefs, resolvers } from "./schema";
-import { getUser, protectedResolver } from "./user/users.utils";
+import { getUser, protectedResolver } from "./user/user.utils";
 
 const server = new ApolloServer({
   schema,

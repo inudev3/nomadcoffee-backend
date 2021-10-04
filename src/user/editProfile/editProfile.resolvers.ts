@@ -1,7 +1,7 @@
 import { Resolvers } from "../../types";
 import client from "../../client";
 import bcrypt from "bcrypt";
-import { protectedResolver } from "../users.utils";
+import { protectedResolver } from "../user.utils";
 
 const resolvers: Resolvers = {
   Mutation: {
