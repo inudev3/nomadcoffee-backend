@@ -6,7 +6,7 @@ export default gql`
       username: String
       email: String
       password: String
-      avatarURL: String
+      avatar: Upload
       location: String
       name: String
     ): MutationResponse!

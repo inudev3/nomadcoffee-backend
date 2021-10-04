@@ -1,9 +1,10 @@
-import {gql} from "apollo-server-express";
+import { gql } from "apollo-server-express";
 
 export default gql`
-    type MutationResponse{
-        ok:Boolean!
-        id:Int
-        error:String
-    }
+  scalar Upload
+  type MutationResponse {
+    ok: Boolean!
+    id: Int
+    error: String
+  }
 `;
