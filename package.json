@@ -32,7 +32,8 @@
   "scripts": {
     "dev": "nodemon --exec ts-node src/server --ext js,ts --delay 2s ",
     "migrate": "npx prisma migrate dev",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",

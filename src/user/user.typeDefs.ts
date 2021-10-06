@@ -8,11 +8,14 @@ export default gql`
     username: String!
     email: String!
     password: String!
-    name: String
+    name: String!
     location: String
     avatarURL: String
     githubUsername: String
     following: [User]
     followers: [User]
+    totalFollowing: Int!
+    totalFollowers: Int!
+    isFollowing: Boolean!
   }
 `;
